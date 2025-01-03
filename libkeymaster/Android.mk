@@ -21,13 +21,14 @@ MOBICORE_PATH := hardware/samsung_slsi/$(TARGET_SOC)/mobicore
 
 LOCAL_MODULE := keystore.exynos5
 LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
 LOCAL_SRC_FILES := keymaster_mobicore.cpp tlcTeeKeymaster_if.c
 LOCAL_C_INCLUDES := \
 	$(MOBICORE_PATH)/daemon/ClientLib/public \
 	$(MOBICORE_PATH)/common/MobiCore/inc/ \
         system/keymaster/include
 LOCAL_C_FLAGS = -fvisibility=hidden -Wall -Werror
-LOCAL_SHARED_LIBRARIES := libcrypto liblog libMcClient libnativehelper
+LOCAL_SHARED_LIBRARIES := libcrypto liblog libMcClient
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 
